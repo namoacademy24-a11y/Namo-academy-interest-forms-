@@ -134,8 +134,17 @@ document.querySelectorAll(".form").forEach(form=>{
   });
 });
 document.getElementById("waShare").onclick=()=>{
-  const msg="Namo Academy में Coaching / Computer Centre / Library की जानकारी और Admission के लिए यह form भरें:\n"+location.href;
-  window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+  const msg =
+    "🎓 NAMO ACADEMY\n\n" +
+    "Coaching • Computer Centre • Library\n\n" +
+    "Admission एवं जानकारी के लिए यह Form भरें:\n" +
+    location.href;
+
+  const whatsappUrl =
+    "https://api.whatsapp.com/send?text=" +
+    encodeURIComponent(msg);
+
+  window.location.href = whatsappUrl;
 };
 document.getElementById("copyLink").onclick=async()=>{
   await navigator.clipboard.writeText(location.href);
@@ -147,8 +156,15 @@ document.getElementById("copyReg").onclick=async()=>{
 };
 document.getElementById("waSuccess").onclick=()=>{
   const no=document.getElementById("registrationNo").textContent;
-  const msg="Namo Academy Registration Successful\nRegistration No.: "+no;
-  window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+
+  const msg =
+    "🎓 NAMO ACADEMY\n\n" +
+    "✅ Registration Successful\n" +
+    "Registration No.: " + no;
+
+  window.location.href =
+    "https://api.whatsapp.com/send?text=" +
+    encodeURIComponent(msg);
 };
 document.getElementById("printReg").onclick=()=>window.print();
 </script>
