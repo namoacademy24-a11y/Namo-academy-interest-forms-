@@ -1,2 +1,1 @@
-# Namo-academy-interest-forms-
-Namoacademy24
+index.html
