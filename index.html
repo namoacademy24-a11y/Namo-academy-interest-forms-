@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Namo Academy | Interest & Admission Forms</title>
+<meta name="description" content="Namo Academy – Student Interest, Admission और Teacher Interest Forms">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans Devanagari,sans-serif;background:#f3f6fb;color:#172033}
+.header{background:linear-gradient(135deg,#123b8f,#1769d2 55%,#35a7ff);color:#fff;padding:28px 16px 22px;text-align:center}
+.logo{font-size:32px;font-weight:900;letter-spacing:.4px}.tag{margin:6px 0 0;opacity:.92}
+.wrap{max-width:850px;margin:18px auto;padding:0 12px}.notice{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 6px 24px #17345a18;margin-bottom:14px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.tab{border:0;border-radius:12px;padding:13px 8px;background:#e5edf9;color:#174b9a;font-weight:800;font-size:15px}.tab.active{background:#1769d2;color:#fff}
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 30px #17345a18}.card h2{margin-top:0;color:#123b8f}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
+label{display:block;font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;padding:13px;border:1px solid #ccd6e5;border-radius:11px;font-size:15px;background:#fff}textarea{min-height:90px;resize:vertical}
+.req{color:#d7263d}.btn{width:100%;border:0;border-radius:12px;padding:14px;background:#1769d2;color:#fff;font-size:16px;font-weight:800;cursor:pointer}.btn:disabled{opacity:.65}
+.share{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.share button{padding:12px;border:0;border-radius:11px;font-weight:800;cursor:pointer}.wa{background:#20b85a;color:#fff}.copy{background:#edf2f8;color:#17345a}
+.status{display:none;margin-top:12px;padding:12px;border-radius:10px;background:#edf8f0;color:#146b36}.error{background:#fff0f0;color:#a32121}
+.small{font-size:13px;color:#637087}.footer{text-align:center;color:#637087;padding:24px 8px}
+.hidden{display:none!important}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.tabs{grid-template-columns:1fr}.share{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo">NAMO ACADEMY</div>
+  <div class="tag">Education • Coaching • Computer Centre • Library</div>
+</header>
+
+<div class="wrap">
+  <div class="notice"><b>स्वागत है!</b><br>नीचे अपनी आवश्यकता के अनुसार Student Interest, Admission या Teacher Interest Form भरें।</div>
+
+  <div class="tabs">
+    <button class="tab active" data-form="interest">Student Interest</button>
+    <button class="tab" data-form="admission">Admission Form</button>
+    <button class="tab" data-form="teacher">Teacher Interest</button>
+  </div>
+
+  <form id="interest" class="card form">
+    <h2>प्रारंभिक रुचि फॉर्म</h2>
+    <div class="grid">
+      <div><label>विद्यार्थी का नाम <span class="req">*</span></label><input name="student_name" required></div>
+      <div><label>अभिभावक का नाम <span class="req">*</span></label><input name="parent_name" required></div>
+      <div><label>कक्षा / स्तर <span class="req">*</span></label><select name="class_level" required><option value="">चुनें</option><option>5वीं</option><option>6वीं</option><option>7वीं</option><option>8वीं</option><option>9वीं</option><option>10वीं</option><option>11वीं</option><option>12वीं</option><option>अन्य</option></select></div>
+      <div><label>मोबाइल नंबर <span class="req">*</span></label><input name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" required></div>
+      <div class="full"><label>किस सुविधा में रुचि है? <span class="req">*</span></label><select name="service" required><option value="">चुनें</option><option>Coaching</option><option>Computer Centre</option><option>Library</option><option>Coaching + Computer Centre</option><option>अन्य</option></select></div>
+      <div><label>Coaching के विषय</label><input name="subjects" placeholder="जैसे गणित, विज्ञान"></div>
+      <div><label>Library का पसंदीदा समय</label><select name="library_time"><option value="">चुनें</option><option>सुबह</option><option>दोपहर</option><option>शाम</option><option>कोई भी समय</option></select></div>
+      <div><label>उचित मासिक शुल्क</label><select name="fee"><option value="">चुनें</option><option>₹500 तक</option><option>₹500–₹1000</option><option>₹1000–₹1500</option><option>₹1500 से अधिक</option></select></div>
+      <div class="full"><label>और कौन-सी सुविधा होनी चाहिए?</label><textarea name="message"></textarea></div>
+    </div>
+    <input type="hidden" name="form_type" value="Student Interest">
+    <button class="btn" type="submit">फॉर्म जमा करें</button>
+    <div class="status"></div>
+  </form>
+
+  <form id="admission" class="card form hidden">
+    <h2>Admission Form</h2>
+    <div class="grid">
+      <div><label>विद्यार्थी का नाम <span class="req">*</span></label><input name="student_name" required></div>
+      <div><label>अभिभावक का नाम <span class="req">*</span></label><input name="parent_name" required></div>
+      <div><label>मोबाइल नंबर <span class="req">*</span></label><input name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" required></div>
+      <div><label>कक्षा <span class="req">*</span></label><input name="class_level" required></div>
+      <div><label>कोर्स / सुविधा <span class="req">*</span></label><select name="course" required><option value="">चुनें</option><option>Coaching</option><option>Computer Centre</option><option>Library</option><option>Coaching + Computer Centre</option></select></div>
+      <div><label>पसंदीदा समय</label><select name="preferred_time"><option value="">चुनें</option><option>सुबह</option><option>दोपहर</option><option>शाम</option></select></div>
+      <div class="full"><label>पता</label><textarea name="address"></textarea></div>
+      <div class="full"><label>अतिरिक्त जानकारी</label><textarea name="message"></textarea></div>
+    </div>
+    <input type="hidden" name="form_type" value="Admission">
+    <button class="btn" type="submit">Admission Request भेजें</button>
+    <div class="status"></div>
+  </form>
+
+  <form id="teacher" class="card form hidden">
+    <h2>Teacher Interest Form</h2>
+    <p class="small">Part-time teaching opportunity के लिए अपनी जानकारी भेजें।</p>
+    <div class="grid">
+      <div><label>नाम <span class="req">*</span></label><input name="name" required></div>
+      <div><label>मोबाइल नंबर <span class="req">*</span></label><input name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" required></div>
+      <div><label>किस विषय को पढ़ा सकते हैं? <span class="req">*</span></label><input name="subject" required></div>
+      <div><label>पसंदीदा समय</label><select name="preferred_time"><option value="">चुनें</option><option>सुबह</option><option>दोपहर</option><option>शाम</option></select></div>
+      <div class="full"><label>Teaching experience</label><textarea name="experience"></textarea></div>
+      <div class="full"><label>संदेश</label><textarea name="message"></textarea></div>
+    </div>
+    <input type="hidden" name="form_type" value="Teacher Interest">
+    <button class="btn" type="submit">Teacher Interest भेजें</button>
+    <div class="status"></div>
+  </form>
+
+  <div id="successBox" class="card hidden" style="text-align:center;margin-top:14px"><div style="font-size:44px">✅</div><h2 style="color:#18864b">Registration Successful</h2><p>आपकी जानकारी सफलतापूर्वक जमा हो गई है।</p><div style="background:#f3f6fb;border-radius:12px;padding:14px;margin:12px 0"><div class="small">Registration Number</div><div id="registrationNo" style="font-size:24px;font-weight:900;color:#123b8f;letter-spacing:1px"></div></div><div class="share"><button class="wa" id="waSuccess">WhatsApp</button><button class="copy" id="copyReg">Registration No. Copy</button></div><button class="btn" id="printReg" type="button">🖨️ Print</button></div>
+
+  <div class="share">
+    <button class="wa" id="waShare">WhatsApp पर शेयर करें</button>
+    <button class="copy" id="copyLink">लिंक कॉपी करें</button>
+  </div>
+  <div class="footer">© Namo Academy • सभी जानकारी सुरक्षित रूप से दर्ज करने के लिए Google Sheets integration उपयोग करें।</div>
+</div>
+
+<script>
+/* STEP 1: नीचे Google Apps Script Web App URL डालें */
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyV8hw_vXwqCZ82fuDsGs8IRzYOWn3yhwmUXmjMCPR_S2FASL4MNiRqbFIQx1ksFhY/exec";
+
+const tabs=document.querySelectorAll(".tab"), forms=document.querySelectorAll(".form");
+tabs.forEach(t=>t.addEventListener("click",()=>{
+  tabs.forEach(x=>x.classList.remove("active"));t.classList.add("active");
+  forms.forEach(f=>f.classList.toggle("hidden",f.id!==t.dataset.form));
+}));
+document.querySelectorAll(".form").forEach(form=>{
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const status=form.querySelector(".status"), btn=form.querySelector(".btn");
+    if(APPS_SCRIPT_URL.startsWith("PASTE_")){
+      status.style.display="block";status.className="status error";
+      status.textContent="पहले Google Sheets integration सेट करें। नीचे दिए गए निर्देशों के अनुसार Apps Script URL डालें।";return;
+    }
+    btn.disabled=true; status.style.display="block";status.className="status";status.textContent="जानकारी भेजी जा रही है…";
+    const data=Object.fromEntries(new FormData(form).entries());
+    data.submitted_at=new Date().toLocaleString("hi-IN");
+    const now=new Date();
+    const registrationNo="NA-"+now.getFullYear()+"-"+String(now.getTime()).slice(-6);
+    data.registration_no=registrationNo;
+    try{
+      await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+      status.textContent="धन्यवाद! आपकी जानकारी सफलतापूर्वक भेज दी गई है।";
+      form.reset();
+      document.getElementById("registrationNo").textContent=registrationNo;
+      document.getElementById("successBox").classList.remove("hidden");
+      document.getElementById("successBox").scrollIntoView({behavior:"smooth",block:"center"});
+    }catch(err){
+      status.className="status error";status.textContent="जानकारी भेजने में समस्या हुई। कृपया दोबारा प्रयास करें।";
+    }finally{btn.disabled=false;}
+  });
+});
+document.getElementById("waShare").onclick=()=>{
+  const msg="Namo Academy में Coaching / Computer Centre / Library की जानकारी और Admission के लिए यह form भरें:\n"+location.href;
+  window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+};
+document.getElementById("copyLink").onclick=async()=>{
+  await navigator.clipboard.writeText(location.href);
+  alert("लिंक कॉपी हो गया है।");
+};
+document.getElementById("copyReg").onclick=async()=>{
+  await navigator.clipboard.writeText(document.getElementById("registrationNo").textContent);
+  alert("Registration Number कॉपी हो गया है।");
+};
+document.getElementById("waSuccess").onclick=()=>{
+  const no=document.getElementById("registrationNo").textContent;
+  const msg="Namo Academy Registration Successful\nRegistration No.: "+no;
+  window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+};
+document.getElementById("printReg").onclick=()=>window.print();
+</script>
+</body>
+</html>
